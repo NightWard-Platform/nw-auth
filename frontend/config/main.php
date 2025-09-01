@@ -13,7 +13,7 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'rabbitmq' => [
-            'class' => 'app\common\components\RabbitMq',
+            'class' => 'common\components\RabbitMq',
             'host' => 'rabbitmq',
             'port' => 5672,
             'user' => 'admin',
