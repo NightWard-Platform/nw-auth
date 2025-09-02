@@ -7,6 +7,9 @@
 
 namespace console\workers;
 
+use Yii;
+use common\models\User;
+
 declare(ticks=1);
 
 class Webhook extends \inpassor\daemon\Worker
@@ -16,6 +19,18 @@ class Webhook extends \inpassor\daemon\Worker
     public $delay = 1;
     public function run()
     {
-        echo 'work' . "\n";
+        $rabbit = Yii::$app->rabbitmq;
+
+        echo "waiting for messages.." . "\n";
+
+        $rabbit->consume('webhooks', Yii::$app->params['webhooks_consume'], function ($body) {
+            $response = json_decode($body);
+            $className = "common\\models\\" . $response->model_name;
+            $model = $className::findOne($response->id);
+            if ($model) {
+                $model->setAttributes($response->attributes, false);
+                $model->updateAttributes($response->attributes);
+            }
+        });
     }
 }

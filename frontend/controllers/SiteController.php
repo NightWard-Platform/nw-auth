@@ -149,7 +149,12 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-
+    // public function actionSetStatus()
+    // {
+    //     $model = User::findOne(1);
+    //     $model->status = $model->status == User::STATUS_ACTIVE ? User::STATUS_DELETED : User::STATUS_ACTIVE;
+    //     $model->save();
+    // }
     /**
      * Signs user up.
      *
