@@ -1,0 +1,25 @@
+.btn{
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    border-radius: map-get($btn-radiuses, normal);
+}
+
+@each $name, $colors in $btn-colors{
+    .btn-#{$name}{
+        @include btn-color(map-get($colors, bg-color), map-get($colors, font-color));
+    }
+}
+
+.btn-rounded{
+    border-radius: map-get($btn-radiuses, rounded);
+}
+
+@each $name, $props in $btn-sizes {
+    .btn-#{$name}{
+        @include btn-size(map-get($props, padding),map-get($props, font-size),map-get($props, line-height));
+    }
+}

@@ -1,0 +1,18 @@
+@mixin btn-color($color, $font-color) {
+    background-color: $color;
+    color: $font-color;
+    border: none;
+    &:hover {
+        background-color: darken($color, 7%);
+    }
+}
+
+@mixin btn-size($padding, $font-size, $line-height){
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+@mixin btn-radius($radius: normal){
+    border-radius: $radius;
+}

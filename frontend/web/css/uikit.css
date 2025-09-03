@@ -1,0 +1,80 @@
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  background-color: hsl(215.1515151515, 81.8181818182%, 40%);
+  color: hsl(0, 0%, 90%);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #0f4899;
+}
+
+.btn-danger {
+  background-color: hsl(356.9832402235, 73.6625514403%, 40%);
+  color: hsl(0, 0%, 90%);
+  border: none;
+}
+.btn-danger:hover {
+  background-color: #92161c;
+}
+
+.btn-success {
+  background-color: hsl(100.1379310345, 74.358974359%, 40%);
+  color: hsl(0, 0%, 90%);
+  border: none;
+}
+.btn-success:hover {
+  background-color: #3f9316;
+}
+
+.btn-warning {
+  background-color: hsl(39.7959183673, 83.0508474576%, 40%);
+  color: hsl(0, 0%, 90%);
+  border: none;
+}
+.btn-warning:hover {
+  background-color: #9a6b0e;
+}
+
+.btn-info {
+  background-color: hsl(180, 79.679144385%, 40%);
+  color: hsl(0, 0%, 90%);
+  border: none;
+}
+.btn-info:hover {
+  background-color: #119797;
+}
+
+.btn-rounded {
+  border-radius: 50%;
+}
+
+.btn-s {
+  padding: 1px 7px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.btn-d {
+  padding: 5px 15px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.btn-l {
+  padding: 8px 15px;
+  font-size: 16px;
+  line-height: 24px;
+}

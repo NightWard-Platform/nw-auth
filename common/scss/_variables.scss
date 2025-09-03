@@ -1,0 +1,156 @@
+$current-theme: light;
+
+$btn-radius: 6px;
+
+$btn-radiuses: (
+    lg: 8px,
+    sm: 4px,
+    xs: 2px
+);
+
+$sizes: (
+    xxs: 4px,
+    xs: 8px,
+    sm: 12px,
+    ms: 16px,
+    md: 20px,
+    lg: 24px,
+    xl: 32px,
+    xxl: 48px
+);
+
+$heights: (
+    xs: 16px,
+    sm: 24px,
+    d: 32px,
+    lg: 40px
+);
+
+$screen-sizes:(
+    xs: 480px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1600px
+);
+
+$margin-sizes: (
+    xxs: map-get($sizes, xxs),
+    xs: map-get($sizes, xs),
+    sm: map-get($sizes, sm),
+    ms: map-get($sizes, ms),
+    md: map-get($sizes, md),
+    lg: map-get($sizes, lg),
+    xl: map-get($sizes, xl),
+    xxl: map-get($sizes, xxl)
+);
+
+$padding-sizes: (
+    xxs: map-get($sizes, xxs),
+    xs: map-get($sizes, xs),
+    sm: map-get($sizes, sm),
+    ms: map-get($sizes, ms),
+    md: map-get($sizes, md),
+    lg: map-get($sizes, lg),
+    xl: map-get($sizes, xl),
+    xxl: map-get($sizes, xxl)
+);
+
+$fonts-sizes: (
+    base: (font-size: 14px, line-height: 22px),
+    sm: (font-size: 12px, line-height: 20px),
+    lg: (font-size: 16px, line-height: 24px),
+    xl: (font-size: 16px, line-height: 24px),
+    h1: (font-size: 38px, line-height: 46px),
+    h2: (font-size: 30px, line-height: 38px),
+    h3: (font-size: 24px, line-height: 32px),
+    h4: (font-size: 20px, line-height: 28px),
+    h5: (font-size: 16px, line-height: 24px),
+);
+
+$base-colors: (
+    blue: #1668DC,
+    geek-blue: #2B4ACB,
+    gold: #D89614,
+    green: #49AA19,
+    lime: #8BBB11,
+    magenta: #CB2B83,
+    orange: #D87A16,
+    purple: #642AB5,
+    red: #D32029,
+    cyan: #13A8A8,
+    volcano: #D84A1B,
+    yellow: #D8BD14,
+    gray: gray,
+);
+
+@function generate-shades($base-color, $steps: 10){
+    $shades: ();
+    $hue: hue($base-color);
+    $saturation: saturation($base-color);
+    
+    @for $i from 1 through $steps {
+        $light-lightness: ($i - 1) * (90% / ($steps - 1));
+        $dark-lightness: 100% - $light-lightness;
+        
+        $light-shade: hsl($hue, $saturation, $light-lightness);
+        $dark-shade: hsl($hue, $saturation, $dark-lightness);
+        
+        $shades: map-merge($shades, (
+            $i: (
+                light: $light-shade,
+                dark: $dark-shade
+            )
+        ));
+    }
+    
+    @return $shades;
+}
+
+$colors-types: ();
+
+@each $color-name, $color-value in $base-colors {
+    $colors-types: map-merge($colors-types, (
+        $color-name: generate-shades($color-value, 10)
+    ));
+}
+
+@function get-color($name, $shade: 5, $theme: light){
+    @return map-get(map-get(map-get($colors-types, $name), $shade), $theme);
+}
+
+$btn-sizes: (
+    s: map-merge((padding: 1px 7px), map-get($fonts-sizes, base)),
+    d: map-merge((padding: 5px 15px), map-get($fonts-sizes, base)),
+    l: map-merge((padding: 8px 15px), map-get($fonts-sizes, lg))
+);
+
+$btn-radiuses: (
+    normal: 6px,
+    rounded: 50%,
+);
+
+$btn-colors: (
+    primary: (
+        bg-color: get-color(blue, 5, $current-theme), 
+        font-color: get-color(gray, 10, $current-theme),
+    ), 
+    danger: (
+        bg-color: get-color(red, 5, $current-theme), 
+        font-color: get-color(gray, 10, $current-theme)
+    ),
+    success: (
+        bg-color: get-color(green, 5, $current-theme), 
+        font-color: get-color(gray, 10, $current-theme)
+    ),
+    warning: (
+        bg-color: get-color(gold, 5, $current-theme), 
+        font-color: get-color(gray, 10, $current-theme)),
+    info: (
+        bg-color: get-color(cyan, 5, $current-theme), 
+        font-color: get-color(gray, 10, $current-theme)),
+);
+
+
+
