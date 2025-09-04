@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>Please fill out the following fields to login:</p>
     <div class="form-group">
-        <input type="email" id="email" class="input-l input-success" placeholder="">
+        <input type="email" id="email" class="input-l" placeholder="">
         <label for="email" class="input-label">AAAAAAA</label>
     </div>
     <div class="row">

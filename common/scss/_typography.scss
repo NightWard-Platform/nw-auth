@@ -1,0 +1,7 @@
+@each $name, $props in $fonts-sizes{
+    .text-#{$name}{
+        @each $prop, $value in $props{
+            #{$prop}: $value;
+        }
+    }
+}

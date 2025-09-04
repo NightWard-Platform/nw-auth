@@ -254,3 +254,48 @@
 .form-group .input-danger:focus + .input-label, .form-group .input-danger:not(:placeholder-shown) + .input-label {
   color: hsl(356.9832402235, 73.6625514403%, 40%);
 }
+
+.text-base {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.text-sm {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.text-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.text-xl {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.text-h1 {
+  font-size: 38px;
+  line-height: 46px;
+}
+
+.text-h2 {
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.text-h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.text-h4 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.text-h5 {
+  font-size: 16px;
+  line-height: 24px;
+}
