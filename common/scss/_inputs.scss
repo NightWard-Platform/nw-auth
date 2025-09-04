@@ -1,0 +1,33 @@
+.form-group {
+    position: relative;
+    @each $name, $props in $input-sizes {
+        .input-#{$name}{
+            @include input;
+            @each $property, $value in $props {
+                #{$property}: $value;
+            }
+            &:focus + .input-label,
+            &:not(:placeholder-shown) + .input-label {
+                top: 12px;
+                left: 10px;
+                font-size: 12px;
+                color: map-get($input-colors, primary);
+                padding: 0 4px;
+            }
+        }
+        .input-label {
+            position: absolute;
+            top: 50%;
+            left: 11px;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: get-color(gray, 5, $current-theme);
+            pointer-events: none;
+            transition: 0.2s ease all;
+            @each $property, $value in $props {
+                    #{$property}: $value;
+                }
+            padding: 0;
+        }
+    }
+}

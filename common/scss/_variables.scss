@@ -152,5 +152,29 @@ $btn-colors: (
         font-color: get-color(gray, 10, $current-theme)),
 );
 
+$input-border-radius: 8px;
+$input-sizes: (
+    s: map-merge(
+        (
+        padding: 3px 11px,
+        padding-top: 11px,
+        ), 
+        map-get($fonts-sizes, base)
+    ),
+    l: map-merge(
+        (
+        padding: 6px 11px,
+        padding-top: 14px,
+        ), 
+        map-get($fonts-sizes, lg)
+    ),
+);
 
+$inputs-bg-color: transparent;
+
+$input-colors: (
+    primary: get-color(blue, 5, $current-theme),
+    success: get-color(green, 5, $current-theme),
+    danger: get-color(red, 5, $current-theme),
+);
 

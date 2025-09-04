@@ -16,3 +16,18 @@
 @mixin btn-radius($radius: normal){
     border-radius: $radius;
 }
+
+@mixin input {
+    width: 100%;
+    border: 1px solid map-get($input-colors, primary);
+    border-radius: $input-border-radius;
+    color: get-color(gray, 1, $current-theme);
+    background-color: $inputs-bg-color;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+        outline: none;
+        border-color: map-get($input-colors, primary);
+        box-shadow: 0 0 0 3px rgba(map-get($input-colors, primary), 0.25);
+    }
+}
