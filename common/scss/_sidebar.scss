@@ -25,10 +25,28 @@
     }
     .sidebar-dropdown-item{
         position: relative;
+        .sidebar-item:not(.sidebar-sub-item){
+            position: relative;
+            &::after{
+                @include icon;
+                right: 9px;
+                content: "\ea3e";
+                width: 24px;
+                height: 24px;
+            }
+        }
         .dropdown-content{
             display: none;
-            &.active{
+            
+        }
+        &.active{
+            .sidebar-item:not(.sidebar-sub-item)::after{
+
+                content: "\ea3a";
+            }
+            .dropdown-content{
                 display: block;
+            
             }
         }
         .sidebar-sub-item{

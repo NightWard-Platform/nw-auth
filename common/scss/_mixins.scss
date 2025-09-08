@@ -31,3 +31,17 @@
         box-shadow: 0 0 0 3px rgba(map-get($input-colors, primary), 0.25);
     }
 }
+
+@mixin icon {
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+}
