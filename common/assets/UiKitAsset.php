@@ -12,6 +12,9 @@ class UiKitAsset extends AssetBundle
     public $css = [
         'css/uikit.css',
     ];
+    public $js = [
+        'js/uikit.js'
+    ];
 
     public $depends = [
         'yii\bootstrap5\BootstrapAsset', // если юзаешь bootstrap5

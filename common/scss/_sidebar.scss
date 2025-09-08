@@ -1,0 +1,42 @@
+
+#sidebarMenu{
+    background-color: $sidebar-bg-color;
+    height: 100vh;
+}
+.sidebar-menu{
+    display: flex;
+    flex-direction: column;
+    
+    .sidebar-item{
+        margin: 4px;
+        padding: 9px 24px;
+        width: calc(100% - 8px);
+        display: flex;
+        gap: 8px;
+        color: $sidebar-item-color;
+        border-radius: $btn-radius;
+        &:hover{
+            color: $sidebar-item-active-color;
+        }
+    }
+    .sidebar-item.active{
+        background-color: $sidebar-active-color;
+        color: $sidebar-item-active-color;
+    }
+    .sidebar-dropdown-item{
+        position: relative;
+        .dropdown-content{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
+        .sidebar-sub-item{
+            margin: 0;
+            width: 100%;
+            background-color: $sidebar-sub-bg-color;
+            border-radius: 0;
+        }
+
+    }
+}

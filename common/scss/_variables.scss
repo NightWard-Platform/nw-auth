@@ -116,7 +116,7 @@ $colors-types: ();
     ));
 }
 
-@function get-color($name, $shade: 5, $theme: light){
+@function get-color($name, $shade: 5, $theme: $current-theme){
     @return map-get(map-get(map-get($colors-types, $name), $shade), $theme);
 }
 
@@ -178,3 +178,8 @@ $input-colors: (
     danger: get-color(red, 5, $current-theme),
 );
 
+$sidebar-bg-color: get-color(blue, 2);
+$sidebar-sub-bg-color: get-color(blue, 1);
+$sidebar-item-color: get-color(gray, 8);
+$sidebar-active-color: get-color(blue, 5);
+$sidebar-item-active-color: get-color(gray, 10);
