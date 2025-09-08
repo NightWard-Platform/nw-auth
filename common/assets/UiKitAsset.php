@@ -11,6 +11,7 @@ class UiKitAsset extends AssetBundle
 
     public $css = [
         'css/uikit.css',
+        'css/uikit-icons.css'
     ];
     public $js = [
         'js/uikit.js'

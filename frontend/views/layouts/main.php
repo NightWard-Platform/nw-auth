@@ -31,12 +31,12 @@ frontend\assets\AppAsset::register($this);
                 <div class="position-sticky pt-3">
                     <div class="sidebar-menu">
                         <div class="sidebar-item active">
-                            <i class="i i-main"></i>
+                            <i class="i i-home2"></i>
                             Главная
                         </div>
                         <div class="sidebar-dropdown-item">
                             <div class="sidebar-item">
-                                <i class="i i-main"></i>
+                                <i class="i i-home"></i>
                                 Главная
                             </div>
                             <div class="dropdown-content">
